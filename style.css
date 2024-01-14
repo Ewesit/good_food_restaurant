@@ -69,3 +69,15 @@ img{
     margin-left: 50px;
 
 }
+
+.contact_form{
+    position: relative;
+    min-height: 100vh;
+    z-index: 0;
+    background: #606c38;
+    padding: 30px;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    align-items: center;
+}
