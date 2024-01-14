@@ -38,7 +38,7 @@ button{
     padding: 9px 25px;
     background-color: #dda15e;
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     
 }
@@ -67,4 +67,5 @@ img{
 
 .container{
     margin-left: 50px;
+
 }
