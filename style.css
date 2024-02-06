@@ -57,4 +57,16 @@ button{
     flex-wrap: wrap;
 }
 
+.row{
+    display: flex;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Let all the flexible items be the same length, regardless of its content: */
+.column{
+    flex: 1;
+}
+
 
