@@ -154,10 +154,10 @@ button{
 
 /* Let's style index page */
 .cover-photo {
-  /* width: 100%;
-  height: 300px; Adjust height as needed */
-  background-image: url('Assets\cover.jpg'); /* Insert your cover photo URL */
-  /* background-size: cover;
+  width: 100%;
+  height: 300px; /* Adjust height as needed */
+  background-image: url('Assets/cover.jpg'); /* Insert your cover photo URL */
+  background-size: cover;
   background-position: center;
   position: relative;
   text-align: center;
@@ -165,5 +165,14 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; */
+  flex-direction: column;
+}
+.cover-text {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.cover-subtext {
+  font-size: 18px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
