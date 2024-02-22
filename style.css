@@ -154,64 +154,114 @@ button{
 
 
 /* Let's style index page */
-.cover-photo {
-  width: 100%;
-  height: 300px; /* Adjust height as needed */
-  background-image: url('Assets/cover.jpg'); /* Insert your cover photo URL */
-  background-size: cover;
-  background-position: center;
+
+.carousel-container {
   position: relative;
-  text-align: center;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.cover-text {
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-.cover-subtext {
-  font-size: 18px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-/* style content in index page */
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-  flex-direction: row;
-  
+/* Make cover photo to cover the entire body of the index page */
+.carousel-slide {
+  display: none;
+  position: fixed;
+  top: 0;   /*position the element at the very top of container*/
+  left: 0;  /*position the element at the very left of container*/
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Send the slides behind other content */
 }
 
-.text-column{
-  flex: 1;
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire slide */
+}
+
+/* .fade {
+  animation-name: fade;
+  animation-duration: 5s; /* sliding duration is 5 seconds */
+/*} */
+
+/* @keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+} */
+
+/* style footer */
+
+/* style contact form */
+.form-container {
+  max-width: 800px;
+  margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8); /* Add background color with opacity for better contrast */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333; /* Text color for better visibility */
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
+  display: flex;
+  flex-direction: row; /* Arrange items horizontally */
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.text-column p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
+.image-container {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.img-column{
-  padding: 20px;
-  flex: 1;
-}
-
-.img-column img{
+.image-container img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  max-height: 300px; /* Adjust the max-height as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
+
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* button {
+  padding: 10px 20px;
+  background-color:#E0622D;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+button:hover {
+  background-color: #ffba08;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+
