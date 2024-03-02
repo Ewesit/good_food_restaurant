@@ -10,11 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body style="background-color: #d0d0ce;">
     <!--navbar-->
     <header>
         
+        <a href="index.html">
             <img class="logo" src="Assets\logo3.png" alt="Logo"> <!--logo-->
+        </a>
             <nav>
                 <ul class="nav_links" type="none">
                     <li><a href="index.html">Home</a></li>
@@ -34,25 +36,25 @@
             <div class="column">
                 <img src="Assets\beef1.jpg" alt="Beef">
                 <div class="price">$60.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\chicken.jpg" alt="Chicken">
                 <div class="price">$20.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\chips2.jpg" alt="Chips">
                 <div class="price">$15.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\choma.jpg" alt="Mbuzi Choma">
                 <div class="price">$16.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
         </div>
 
@@ -61,25 +63,25 @@
             <div class="column">
                 <img src="Assets\hotdog1.jpg" alt="hotdog">
                 <div class="price">$13.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\pilau.jpg" alt="Pilau">
                 <div class="price">$18.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\white rice.jpg" alt="Rice">
                 <div class="price">$50.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\samosa.jpg" alt="samosa">
                 <div class="price">$17.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
         </div>
 
@@ -88,25 +90,25 @@
             <div class="column">
                 <img src="Assets\sausage2.jpg" alt="sausage">
                 <div class="price">$23.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\steak.jpg" alt="Beef">
                 <div class="price">$9.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\fish2.jpg" alt="Fish">
                 <div class="price">$12.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
     
             <div class="column">
                 <img src="Assets\fullchicken.jpg" alt="fullchicken">
                 <div class="price">$40.99 <span class="currency">USD</span></div>
-                <button class="orderButton" onclick="alert('Order placed!')">Make Order</button>
+                <button class="orderButton" onclick="redirectToPayment()">Make Order</button>
             </div>
         </div>
 
@@ -114,6 +116,34 @@
         
     </div>
 
+    <footer>
+        <div class="footer-container">
+            <a href="index.html">
+                <img class="logo" src="Assets\logo3.png" alt="Logo"> <!--logo-->
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <p>23 Kakuma, Turkana County</p>
+                <p>Phone: 0723641896</p>
+                <p>Email: lowaewesi@gmail.com</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="copyright">
+            <p>&copy; 2024 Good Food Restaurant. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="stk.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

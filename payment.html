@@ -9,12 +9,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
 
+    <style>
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #E0622D;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ffba08;
+    }
+
+    #response {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
-    <!--navbar-->
+    <!-- navbar -->
     <header>
         
+        <a href="index.html">
             <img class="logo" src="Assets\logo3.png" alt="Logo"> <!--logo-->
+        </a>
             <nav>
                 <ul class="nav_links" type="none">
                     <li><a href="index.html">Home</a></li>
@@ -25,62 +78,50 @@
             <a class="cta" href="contact.html"><button>Contact US</button></a>
         
     </header>
-    <!-- <hr> -->
+    
+    <!-- STK push-->
+    
+    <form id="stkForm">
+        <h1 class="title">Make Payment via Lipa na Mpesa</h1>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required pattern="[0-9]{10}">
+        <br>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required min="1">
+        <br>
+        <button type="submit">Push STK</button>
+    </form>
 
-    <h1>M-Pesa Payment</h1>
-    <button onclick="makePayment()">Make Payment</button>
-
-    <script>
-
-        async function makePayment() {
-            const consumerKey = 'zngM7dQAAwq5VrcEhcf9M3s4eQUaSpcbG6D5AdgT20KNa88N';
-            const consumerSecret = 'u6dsGd2bdDA6YAEdOFgHNIRCwRbzm3tf5tnFGAoYJsGiru5Y6VnIuIJXe6NUhiJ3';
-
-            try {
-                // Step 1: Obtain access token
-                const authResponse = await fetch('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': 'Basic ' + btoa(consumerKey + ':' + consumerSecret),
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                const authData = await authResponse.json();
-                const accessToken = authData.access_token;
-
-                // Step 2: Make payment request
-                const paymentRequest = {
-                    'BusinessShortCode': '174379',
-                    'Password': 'Safaricom999!*!', // Replace with your actual password or generate dynamically
-                    'Timestamp': '20240208023456', // Replace with actual timestamp
-                    'TransactionType': 'CustomerPayBillOnline',
-                    'Amount': '1',
-                    'PartyA': '254708374149', // Replace with customer's phone number
-                    'PartyB': '74379', // Replace with your Paybill number
-                    'PhoneNumber': '254708374149', // Replace with customer's phone number
-                    'CallBackURL': 'https://sandbox.safaricom.co.ke/mpesa/', // URL for receiving payment notifications
-                    'AccountReference': 'Good Food Restaurant', // Replace with your order ID
-                    'TransactionDesc': 'Testing STKPUSH' // Description of the transaction
-                };
+    <div id="response"></div>
 
 
-                const paymentResponse = await fetch('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer ' + accessToken,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(paymentRequest)
-                });
+    <footer>
+        <div class="footer-container">
+            <a href="index.html">
+                <img class="logo" src="Assets\logo3.png" alt="Logo"> <!--logo-->
+            </a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="contact-info">
+                <p>23 Kakuma, Turkana County</p>
+                <p>Phone: 0723641896</p>
+                <p>Email: lowaewesi@gmail.com</p>
+            </div>
+        </div>
 
-                const paymentData = await paymentResponse.json();
-                console.log(paymentData); // Log the payment response
-            } catch (error) {
-                console.error('Error making payment:', error);
-                alert('Error making payment. Please try again later.');
-            }
-        }
-    </script>
+        <hr>
+
+        <div class="copyright">
+            <p>&copy; 2024 Good Food Restaurant. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="stk.js"></script>
 </body>
 </html>

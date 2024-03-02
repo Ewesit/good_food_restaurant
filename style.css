@@ -8,23 +8,27 @@
 }
 
 
-/* body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  } */
-
 li,a,button{
     font-weight: 500;
     font-size: 16px;
-    color: black;
+    color: #333;
     text-decoration: none;
 
 }
+
+/* Make navigation links visible by adding a background color or an image behind the navigation bar. */
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Set a semi-transparent white background */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other elements */
     
     
 }
@@ -55,7 +59,11 @@ button{
     
 }
 
+button:hover{
+  background-color: #ffba08;
+}
 
+/* style the menu page */
 .container{
     display: flex;
     flex-wrap: wrap; /*Make the flexible items wrap if necessary */
@@ -64,6 +72,7 @@ button{
     margin-left: auto; /* Set left margin to auto */
     margin-right: auto; /* Set right margin to auto */
     max-width: 1200px; /* Fixed width for the container */
+    padding: 20px; 
 }
 
 .row{
@@ -137,7 +146,6 @@ button{
   }
 
 
-
 /* Adjust column width for smaller screens */
 @media (max-width: 768px) {
     .column {
@@ -173,95 +181,185 @@ button{
   z-index: -1; /* Send the slides behind other content */
 }
 
-
 .carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure the image covers the entire slide */
 }
 
-/* .fade {
-  animation-name: fade;
-  animation-duration: 5s; /* sliding duration is 5 seconds */
-/*} */
+/* create a semi-transparent overlay on top of each slide by adjusting the background-color and 
+opacity (rgba(0, 0, 0, 0.5)) to achieve the desired darkness level. */
 
-/* @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-} */
-
-/* style footer */
-
-/* style contact form */
-.form-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Add background color with opacity for better contrast */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #333; /* Text color for better visibility */
-  height: 100vh; /* Set the height to 100% of the viewport height */
-  overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
-  display: flex;
-  flex-direction: row; /* Arrange items horizontally */
-
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.image-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-label,
-input,
-textarea {
-  display: block;
-  margin-bottom: 10px;
-}
-
-input,
-textarea {
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity (0.5) as needed */
 }
 
-/* button {
+
+
+/* Style the menu button */
+.menu-button {
+  position: absolute;
+  top: 75%; /* Adjust the top position as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 10px 20px;
-  background-color:#E0622D;
+  background-color: #E0622D;
+  color: #fff;
+  text-decoration: none;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-} */
+  z-index: 1; /* Ensure the button is above the carousel slides */
+}
 
-button:hover {
+.menu-button:hover {
   background-color: #ffba08;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
+
+/* Style the title on cover slides */
+.welcome {
+  position: absolute;
+  top: 40%; /* Adjust the top position to push it below the navigation bar */
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding: 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for emphasis */
 }
 
-footer p {
+
+/* Style the cover text */
+.cover-text {
+  position: absolute;
+  top: 55%; /* Adjust the top position to push it below the navigation bar */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+}
+
+
+/* Add margin to the bottom of the content */
+.content {
+  margin-bottom: 600px; 
+}
+
+/* style the contact form */
+/* .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+} */
+#contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 130px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #E0622D;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #ffba08;
+}
+
+/* style footer */
+
+footer {
+  position: relative; /* or position: fixed; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.footer-nav ul {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
 }
 
+.footer-nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+/* Style the copyright */
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* style about cover photo */
+
+.about-cover-photo {
+  background-image: url('Assets/about cover pic.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Adjust the height as needed */
+}
 
